@@ -6,7 +6,7 @@ INSERT_TEXT=$3
 
 if [ ! -f $FILE ]
 then
-  echo "ERROR: \"$FILE\" dosen't exist!"
+  echo "ERROR: \"$FILE\" dosen't exist!" 2>&1
   exit 1
 fi
 
@@ -14,14 +14,14 @@ fi
 LINE=$(cat $FILE | grep "$LINE_INDICATOR" -n | cut -d ':' -f 1)
 if [ ! $LINE ]
 then
-  echo "ERROR: \"$LINE_INDICATOR\" line dosen't exist!"
+  echo "ERROR: \"$LINE_INDICATOR\" line dosen't exist!" 2>&1
   exit 2
 fi
 
 cat $FILE | grep "$INSERT_TEXT" > /dev/null
 if [ $? -eq 0 ]
 then
-  echo "ERROR: \"$INSERT_TEXT\" is already inserted!"
+  echo "ERROR: \"$INSERT_TEXT\" is already inserted!" 2>&1
   exit 3
 fi
 
