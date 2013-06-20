@@ -1,0 +1,35 @@
+#! /bin/sh
+
+FILE=$1
+LINE_INDICATOR=$2
+INSERT_TEXT=$3
+
+if [ ! -f $FILE ]
+then
+  echo "ERROR: \"$FILE\" dosen't exist!"
+  exit 1
+fi
+
+# LINE=$(cat $FILE | grep "$LINE_INDICATOR" -n | awk -F':' {'print $1'})
+LINE=$(cat $FILE | grep "$LINE_INDICATOR" -n | cut -d ':' -f 1)
+if [ ! $LINE ]
+then
+  echo "ERROR: \"$LINE_INDICATOR\" line dosen't exist!"
+  exit 2
+fi
+
+cat $FILE | grep "$INSERT_TEXT" > /dev/null
+if [ $? -eq 0 ]
+then
+  echo "ERROR: \"$INSERT_TEXT\" is already inserted!"
+  exit 3
+fi
+
+ed $FILE << EOS
+$LINE
+i
+$INSERT_TEXT
+.
+w
+q
+EOS
