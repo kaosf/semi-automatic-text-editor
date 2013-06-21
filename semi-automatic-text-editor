@@ -3,6 +3,7 @@
 FILE=$1
 LINE_INDICATOR=$2
 INSERT_TEXT=$3
+OFFSET=$4
 
 if [ ! -f $FILE ]
 then
@@ -23,6 +24,21 @@ if [ $? -eq 0 ]
 then
   echo "ERROR: \"$INSERT_TEXT\" is already inserted!" 2>&1
   exit 3
+fi
+
+if [ $OFFSET ]
+then
+  LINE=$(( $LINE + $OFFSET ))
+fi
+if [ $LINE -lt 0 ]
+then
+  echo 'ERROR: LINE became negative!' 2>&1
+  exit 4
+fi
+if [ $LINE -gt $(cat $FILE | wc -l) ]
+then
+  echo "ERROR: LINE was over the number of lines of \"$FILE\"" 2>&1
+  exit 4
 fi
 
 ed $FILE << EOS
