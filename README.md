@@ -7,10 +7,12 @@
 ## Usage
 
 ```sh
-semi-automatic-text-editor FILE LINE_INDICATOR INSERT_TEXT
+semi-automatic-text-editor FILE LINE_INDICATOR INSERT_TEXT [OFFSET = 0]
 ```
 
 `INSERT_TEXT` will be inserted at the line that `LINE_INDICATOR` exists in `FILE`.
+
+If `OFFSET` is specified, `INSERT_TEXT` will be inserted at `(the line that LINE_INDICATOR exists) + OFFSET`.
 
 ## Example
 
