@@ -65,7 +65,7 @@ semi-automatic-text-editor a.txt abc bcd
 
 ### Example 5
 
-You can specify *OFFSET* at 4th argument. It will be *0* defaultly.
+You can specify **OFFSET** at 4th argument. It will be **0** defaultly.
 
 ```sh
 semi-automatic-text-editor a.txt abc def 2
@@ -97,7 +97,7 @@ bcd
 cde
 ```
 
-`cde` was at line *3*. Therefore `def` is inserted into line *3 + (-2) = 1*.
+`cde` was at line **3**. Therefore `def` is inserted into line **1** (3 + (-2)).
 
 ## TODO
 
