@@ -63,6 +63,42 @@ semi-automatic-text-editor a.txt abc bcd
 #=> ERROR: "bcd" is already inserted!
 ```
 
+### Example 5
+
+You can specify *OFFSET* at 4th argument. It will be *0* defaultly.
+
+```sh
+semi-automatic-text-editor a.txt abc def 2
+```
+
+`a.txt` will be;
+
+```text
+abc
+bcd
+def
+cde
+```
+
+`def` is inserted into after 2 lines that `abc` exists.
+
+### Example 6
+
+```sh
+semi-automatic-text-editor a.txt cde def -2
+```
+
+`a.txt` will be;
+
+```text
+def
+abc
+bcd
+cde
+```
+
+`cde` was at line *3*. Therefore `def` is inserted into line *3 + (-2) = 1*.
+
 ## TODO
 
 * Write Tests
