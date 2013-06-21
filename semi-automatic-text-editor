@@ -30,9 +30,10 @@ if [ $OFFSET ]
 then
   LINE=$(( $LINE + $OFFSET ))
 fi
-if [ $LINE -lt 0 ]
+echo $LINE
+if [ $LINE -lt 1 ]
 then
-  echo 'ERROR: LINE became negative!' 2>&1
+  echo 'ERROR: LINE became negative or 0!' 2>&1
   exit 4
 fi
 if [ $LINE -gt $(cat $FILE | wc -l) ]
