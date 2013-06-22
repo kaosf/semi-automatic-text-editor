@@ -30,7 +30,6 @@ if [ $OFFSET ]
 then
   LINE=$(( $LINE + $OFFSET ))
 fi
-echo $LINE
 if [ $LINE -lt 1 ]
 then
   echo 'ERROR: LINE became negative or 0!' 2>&1
