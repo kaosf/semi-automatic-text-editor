@@ -101,9 +101,25 @@ cde
 
 `cde` was at line **3**. Therefore `def` is inserted into line **1** (3 + (-2)).
 
+## Test
+
+`./test/run.sh`
+
+### About shUnit2
+
+[shUnit2](http://code.google.com/p/shunit2/) is a xUnit for ShellScript.
+
+Download it from [here](http://sourceforge.net/projects/shunit2/?source=dlp) (I downloaded version 2.1.3) and extract it. Then, run `make build` to generate `build/shunit2`. Use it as a library (I copied it into `test` directory).
+
+An official documentation is [here](http://shunit2.googlecode.com/svn/trunk/source/2.1/doc/shunit2.html). Refer it to know how to use shUnit2 more.
+
 ## TODO
 
-* Write Tests
+* Write Tests for Example 2, 3 and 4
+
+## References
+
+* [shUnit2 を使ってシェルスクリプトのユニットテストをやってみた - ablog](http://d.hatena.ne.jp/yohei-a/20100202/1265094899)
 
 ## License
 
