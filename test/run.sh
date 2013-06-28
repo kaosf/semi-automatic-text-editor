@@ -16,6 +16,11 @@ cd test
   cp a.txt.bk a.txt
   $TOOL a.txt abc def 2
   diff a.txt 5-expected.txt
+
+  # Example 6
+  cp a.txt.bk a.txt
+  $TOOL a.txt cde def -2
+  diff a.txt 6-expected.txt
 )
 # catch
 [ $? -eq 0 ] || (
