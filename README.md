@@ -2,7 +2,7 @@
 
 ## Installation
 
-**write later**
+Copy `semi-automatic-text-editor` to a directory that is in your PATH.
 
 ## Usage
 
