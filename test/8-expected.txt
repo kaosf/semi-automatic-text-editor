@@ -1,0 +1,4 @@
+[bcd]
+cde
+[efg]
+def
