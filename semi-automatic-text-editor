@@ -34,7 +34,7 @@ then
   echo 'ERROR: LINE became negative or 0!' 2>&1
   exit 4
 fi
-if [ $LINE -gt $(cat $FILE | wc -l) ]
+if [ $LINE -gt $(wc -l $FILE) ]
 then
   echo "ERROR: LINE was over the number of lines of \"$FILE\"" 2>&1
   exit 4
