@@ -40,11 +40,9 @@ then
   exit 4
 fi
 
-ed $FILE << EOS
-$LINE
-i
-$INSERT_TEXT
-.
-w
-q
-EOS
+TEMPFILE=/tmp/$(date +%Y%m%d%H%M%S)-$FILE
+cp $FILE $TEMPFILE
+head -$(($LINE - 1)) $TEMPFILE > $FILE
+echo $INSERT_TEXT >> $FILE
+tail -n +$LINE $TEMPFILE >> $FILE
+rm $TEMPFILE
