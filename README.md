@@ -124,3 +124,5 @@ An official documentation is [here](http://shunit2.googlecode.com/svn/trunk/sour
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
+
+Copyright &copy; 2014 ka
