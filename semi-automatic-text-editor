@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ $# -lt 3 ]
+then
+  echo "Arity ERROR!" 1>&2
+  echo "At least 3 arguments (filename, line-indicator, insert-text[, offset]) are requied." 1>&2
+fi
+
 FILE=$1
 LINE_INDICATOR=$2
 INSERT_TEXT=$3
