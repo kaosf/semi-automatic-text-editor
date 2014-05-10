@@ -4,6 +4,7 @@ if [ $# -lt 3 ]
 then
   echo "Arity ERROR!" 1>&2
   echo "At least 3 arguments (filename, line-indicator, insert-text[, offset]) are requied." 1>&2
+  exit 5
 fi
 
 FILE=$1
