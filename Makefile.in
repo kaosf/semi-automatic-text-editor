@@ -1,0 +1,12 @@
+PREFIX=
+
+all:
+
+check:
+	bash test/run.sh
+
+install:
+	cp semi-automatic-text-editor $(PREFIX)/bin
+
+uninstall:
+	rm $(PREFIX)/bin/semi-automatic-text-editor
