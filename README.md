@@ -2,7 +2,12 @@
 
 ## Installation
 
-Copy `semi-automatic-text-editor` to a directory that is in your PATH.
+```bash
+./configure
+# or
+#./configure --prefix=$HOME/local
+make install
+```
 
 ## Usage
 
@@ -103,7 +108,7 @@ cde
 
 ## Test
 
-`./test/run.sh`
+`make check`
 
 ### About shUnit2
 
