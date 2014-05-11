@@ -9,6 +9,7 @@ setUp()
   cd $TEST_DIR
   cp a.txt a.txt.bk
   cp b.txt b.txt.bk
+  cp a/a.txt a/a.txt.bk
 }
 
 tearDown()
@@ -18,6 +19,9 @@ tearDown()
   fi
   if [ -f b.txt.bk ]; then
     mv b.txt.bk b.txt
+  fi
+  if [ -f a/a.txt.bk ]; then
+    mv a/a.txt.bk a/a.txt
   fi
   cd $PREV_DIR
 }
@@ -54,6 +58,13 @@ testExample8()
 {
   $TOOL b.txt def '[efg]' > /dev/null 2>&1
   diff b.txt 8-expected.txt
+  assertEquals 0 $?
+}
+
+testExample9()
+{
+  $TOOL a/a.txt abc def > /dev/null 2>&1
+  diff a/a.txt 9-expected.txt
   assertEquals 0 $?
 }
 
