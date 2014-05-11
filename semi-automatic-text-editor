@@ -47,7 +47,7 @@ then
   exit 4
 fi
 
-TEMPFILE=/tmp/$(date +%Y%m%d%H%M%S)-$FILE
+TEMPFILE=/tmp/$(date +%Y%m%d%H%M%S)-$(echo $FILE | tr '/' '-')
 cp $FILE $TEMPFILE
 head -$(($LINE - 1)) $TEMPFILE > $FILE
 echo $INSERT_TEXT >> $FILE
