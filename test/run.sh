@@ -68,5 +68,12 @@ testExample9()
   assertEquals 0 $?
 }
 
+testExample10()
+{
+  $TOOL a.txt abc ' def ' > /dev/null 2>&1
+  diff a.txt 10-expected.txt
+  assertEquals 0 $?
+}
+
 # load shunit2
 . $TEST_DIR/shunit2
